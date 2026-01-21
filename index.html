@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIF Service - Home</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .hero {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #5a6fd8;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100%;
+            background: white;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+            transition: right 0.3s;
+            padding: 2rem;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .sidebar.open {
+            right: 0;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .sidebar .form-group {
+            margin-bottom: 1rem;
+        }
+        .sidebar label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        .sidebar input[type="text"], .sidebar input[type="email"], .sidebar input[type="tel"], .sidebar input[type="password"], .sidebar textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .sidebar textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .sidebar button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-bottom: 1rem;
+        }
+        .sidebar button:hover {
+            background: #5a6fd8;
+        }
+        .sidebar .error {
+            color: red;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        .sidebar .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+        .sidebar .switch-form {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .sidebar .switch-form a {
+            color: #667eea;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Welcome to TIF Service</h1>
+        <p>Your favorite tiffin delivery service. Order delicious meals from local restaurants delivered to your doorstep.</p>
+        <div class="buttons">
+            <button onclick="openSidebar('login')">Login</button>
+            <button onclick="openSidebar('register')">Register</button>
+        </div>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="closeSidebar()">&times;</button>
+        <div id="loginForm" style="display: none;">
+            <h2>Login to TIF Service</h2>
+            <form id="loginFormEl">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+                <div id="loginError" class="error"></div>
+            </form>
+            <div class="switch-form">
+                <a onclick="switchToRegister()">Don't have an account? Register here</a>
+            </div>
+        </div>
+        <div id="registerForm" style="display: none;">
+            <h2>Register for TIF Service</h2>
+            <form id="registerFormEl">
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="regMobile">Mobile Number</label>
+                    <input type="tel" id="regMobile" name="mobile" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" name="password" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="regAddress">Address</label>
+                    <textarea id="regAddress" name="address" required></textarea>
+                </div>
+                <button type="submit">Register</button>
+                <div id="registerError" class="error"></div>
+            </form>
+            <div class="switch-form">
+                <a onclick="switchToLogin()">Already have an account? Login here</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openSidebar(form) {
+            document.getElementById('sidebar').classList.add('open');
+            if (form === 'login') {
+                document.getElementById('loginForm').style.display = 'block';
+                document.getElementById('registerForm').style.display = 'none';
+            } else {
+                document.getElementById('registerForm').style.display = 'block';
+                document.getElementById('loginForm').style.display = 'none';
+            }
+        }
+
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+        }
+
+        function switchToRegister() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        }
+
+        function switchToLogin() {
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        }
+
+        document.getElementById('loginFormEl').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const errorDiv = document.getElementById('loginError');
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    localStorage.setItem('token', data.token);
+                    window.location.href = '/dashboard';
+                } else {
+                    const error = await response.json();
+                    errorDiv.textContent = error.message || 'Login failed';
+                    errorDiv.style.display = 'block';
+                }
+            } catch (error) {
+                errorDiv.textContent = 'Network error. Please try again.';
+                errorDiv.style.display = 'block';
+            }
+        });
+
+        document.getElementById('registerFormEl').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const mobile = document.getElementById('regMobile').value;
+            const password = document.getElementById('regPassword').value;
+            const address = document.getElementById('regAddress').value;
+            const errorDiv = document.getElementById('registerError');
+
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, mobile, password, address }),
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    alert('Registration successful! Please login.');
+                    switchToLogin();
+                } else {
+                    const error = await response.json();
+                    errorDiv.textContent = error.message || 'Registration failed';
+                    errorDiv.style.display = 'block';
+                }
+            } catch (error) {
+                errorDiv.textContent = 'Network error. Please try again.';
+                errorDiv.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
