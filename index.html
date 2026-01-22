@@ -5,53 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIF Service - Home</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .navbar {
+            background-color: #cb202d;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .navbar .location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .navbar .search {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 2rem;
+        }
+        .navbar input {
+            width: 100%;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+        }
+        .navbar .right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .hero {
             background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
+            height: 60vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            text-align: center;
             color: white;
         }
-        .hero {
-            text-align: center;
-            max-width: 600px;
+        .hero .search-bar {
+            background: rgba(255, 255, 255, 0.9);
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            backdrop-filter: blur(10px);
+            max-width: 600px;
+            width: 100%;
         }
-        h1 {
-            font-size: 3rem;
+        .hero input {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
         }
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        .buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-        button {
-            padding: 0.75rem 1.5rem;
-            background: #667eea;
+        .hero button {
+            padding: 1rem 2rem;
+            background-color: #cb202d;
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 1rem;
+            font-size: 1.2rem;
             cursor: pointer;
-            transition: background 0.3s;
         }
-        button:hover {
-            background: #5a6fd8;
+        .section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .category {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .category:hover {
+            transform: translateY(-5px);
+        }
+        .category img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .category p {
+            padding: 1rem;
+            font-weight: bold;
+        }
+        .restaurants {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .restaurant {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .restaurant img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .restaurant .info {
+            padding: 1rem;
+        }
+        .restaurant h3 {
+            margin-bottom: 0.5rem;
+        }
+        .restaurant p {
+            color: #666;
         }
         .sidebar {
             position: fixed;
@@ -97,7 +200,7 @@
         .sidebar button {
             width: 100%;
             padding: 0.75rem;
-            background: #667eea;
+            background: #cb202d;
             color: white;
             border: none;
             border-radius: 5px;
@@ -107,7 +210,7 @@
             margin-bottom: 1rem;
         }
         .sidebar button:hover {
-            background: #5a6fd8;
+            background: #a01823;
         }
         .sidebar .error {
             color: red;
@@ -129,21 +232,91 @@
             margin-top: 1rem;
         }
         .sidebar .switch-form a {
-            color: #667eea;
+            color: #cb202d;
             text-decoration: none;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">TIF Service</div>
+        <div class="location">
+            <span>📍</span>
+            <span>Select Location</span>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search for restaurants, food...">
+        </div>
+        <div class="right">
+            <a href="login.html">Sign In</a>
+            <a href="#">Cart</a>
+        </div>
+    </nav>
+
     <div class="hero">
-        <h1>Welcome to TIF Service</h1>
-        <p>Your favorite tiffin delivery service. Order delicious meals from local restaurants delivered to your doorstep.</p>
-        <div class="buttons">
-            <button onclick="openSidebar('login')">Login</button>
-            <button onclick="openSidebar('register')">Register</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Enter your delivery address">
+            <button>Find Food</button>
         </div>
     </div>
+
+    <section class="section">
+        <h2>What's on your mind?</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pizza">
+                <p>Pizza</p>
+            </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Burger">
+                <p>Burger</p>
+            </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1551782450-17144efb5723?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Biryani">
+                <p>Biryani</p>
+            </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chinese">
+                <p>Chinese</p>
+            </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Ice Cream">
+                <p>Ice Cream</p>
+            </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="North Indian">
+                <p>North Indian</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Top restaurants in your area</h2>
+        <div class="restaurants">
+            <div class="restaurant">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Restaurant 1">
+                <div class="info">
+                    <h3>Spice Garden</h3>
+                    <p>North Indian, Chinese • 4.2 ⭐ • 30-40 mins</p>
+                </div>
+            </div>
+            <div class="restaurant">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Restaurant 2">
+                <div class="info">
+                    <h3>Pizza Hut</h3>
+                    <p>Pizza, Italian • 4.5 ⭐ • 25-35 mins</p>
+                </div>
+            </div>
+            <div class="restaurant">
+                <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Restaurant 3">
+                <div class="info">
+                    <h3>Biryani House</h3>
+                    <p>Biryani, Mughlai • 4.3 ⭐ • 20-30 mins</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div id="sidebar" class="sidebar">
         <button class="close-btn" onclick="closeSidebar()">&times;</button>
