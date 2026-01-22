@@ -1,4 +1,4 @@
-- [x] Add navbar with logo, location selector, search bar, sign in, and cart links
+g- [x] Add navbar with logo, location selector, search bar, sign in, and cart links
 - [x] Restructure hero section to include food search bar and background
 - [x] Add food categories section with images
 - [x] Add popular restaurants/items section with food pictures
@@ -6,3 +6,4 @@
 - [x] Link sign in to login.html and register to register.html
 - [x] Test the page by opening in browser
 - [x] Change Sign In link in navbar to open sidebar with login form instead of redirecting to login.html
+- [ ] Add cancel button in login and registration forms in the sidebar

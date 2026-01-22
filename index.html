@@ -249,7 +249,7 @@
             <input type="text" placeholder="Search for restaurants, food...">
         </div>
         <div class="right">
-            <a href="login.html">Sign In</a>
+            <a href="#" onclick="openSidebar('login'); return false;">Sign In</a>
             <a href="#">Cart</a>
         </div>
     </nav>
@@ -332,6 +332,7 @@
                     <input type="password" id="loginPassword" name="password" required>
                 </div>
                 <button type="submit">Login</button>
+                <button type="button" onclick="closeSidebar()">Cancel</button>
                 <div id="loginError" class="error"></div>
             </form>
             <div class="switch-form">
@@ -362,6 +363,7 @@
                     <textarea id="regAddress" name="address" required></textarea>
                 </div>
                 <button type="submit">Register</button>
+                <button type="button" onclick="closeSidebar()">Cancel</button>
                 <div id="registerError" class="error"></div>
             </form>
             <div class="switch-form">
