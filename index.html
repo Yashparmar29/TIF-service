@@ -332,8 +332,10 @@
                     <label for="loginPassword">Password</label>
                     <input type="password" id="loginPassword" name="password" required>
                 </div>
-                <button type="submit">Login</button>
-                <button type="button" onclick="closeSidebar()">Cancel</button>
+                <div style="display: flex; gap: 1rem;">
+                    <button type="submit" style="flex: 1;">Login</button>
+                    <button type="button" onclick="closeSidebar()" style="flex: 1; background: #ccc; color: #333;">Cancel</button>
+                </div>
                 <div id="loginError" class="error"></div>
             </form>
             <div class="switch-form">
@@ -363,8 +365,10 @@
                     <label for="regAddress">Address</label>
                     <textarea id="regAddress" name="address" required></textarea>
                 </div>
-                <button type="submit">Register</button>
-                <button type="button" onclick="closeSidebar()">Cancel</button>
+                <div style="display: flex; gap: 1rem;">
+                    <button type="submit" style="flex: 1;">Register</button>
+                    <button type="button" onclick="closeSidebar()" style="flex: 1; background: #ccc; color: #333;">Cancel</button>
+                </div>
                 <div id="registerError" class="error"></div>
             </form>
             <div class="switch-form">
