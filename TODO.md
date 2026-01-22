@@ -6,4 +6,4 @@ g- [x] Add navbar with logo, location selector, search bar, sign in, and cart li
 - [x] Link sign in to login.html and register to register.html
 - [x] Test the page by opening in browser
 - [x] Change Sign In link in navbar to open sidebar with login form instead of redirecting to login.html
-- [ ] Add cancel button in login and registration forms in the sidebar
+- [x] Add cancel button in login and registration forms in the sidebar
