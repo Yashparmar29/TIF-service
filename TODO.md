@@ -1,9 +1,3 @@
-g- [x] Add navbar with logo, location selector, search bar, sign in, and cart links
-- [x] Restructure hero section to include food search bar and background
-- [x] Add food categories section with images
-- [x] Add popular restaurants/items section with food pictures
-- [x] Update CSS for Swiggy-like styling (colors, layout)
-- [x] Link sign in to login.html and register to register.html
-- [x] Test the page by opening in browser
-- [x] Change Sign In link in navbar to open sidebar with login form instead of redirecting to login.html
-- [x] Add cancel button in login and registration forms in the sidebar
+- [x] Change the close button in sidebar to a small "Close" button with background and border
+- [x] Update CSS for .close-btn to style it as a small button
+- [x] Test the change by opening index.html in browser
