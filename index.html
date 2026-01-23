@@ -250,6 +250,32 @@
             text-decoration: none;
             cursor: pointer;
         }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .footer .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer .contact {
+            margin-bottom: 1rem;
+        }
+        .footer .copyright {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
     </style>
 </head>
 <body>
@@ -302,6 +328,22 @@
                 <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="North Indian">
                 <p>North Indian</p>
             </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="South Indian">
+                <p>South Indian</p>
+            </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Desserts">
+                <p>Desserts</p>
+            </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1572441713132-fb0c783b9b5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Beverages">
+                <p>Beverages</p>
+            </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Fast Food">
+                <p>Fast Food</p>
+            </div>
         </div>
     </section>
 
@@ -327,6 +369,27 @@
                 <div class="info">
                     <h3>Biryani House</h3>
                     <p>Biryani, Mughlai • 4.3 ⭐ • 20-30 mins</p>
+                </div>
+            </div>
+            <div class="restaurant">
+                <img src="https://images.unsplash.com/photo-1551782450-17144efb5723?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="McDonald's">
+                <div class="info">
+                    <h3>McDonald's</h3>
+                    <p>Fast Food, Burgers • 4.1 ⭐ • 15-25 mins</p>
+                </div>
+            </div>
+            <div class="restaurant">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="KFC">
+                <div class="info">
+                    <h3>KFC</h3>
+                    <p>Chicken, Fast Food • 4.0 ⭐ • 20-30 mins</p>
+                </div>
+            </div>
+            <div class="restaurant">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Domino's">
+                <div class="info">
+                    <h3>Domino's Pizza</h3>
+                    <p>Pizza, Italian • 4.4 ⭐ • 25-35 mins</p>
                 </div>
             </div>
         </div>
@@ -481,5 +544,20 @@
             }
         });
     </script>
+
+    <footer class="footer">
+        <div class="links">
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="contact">
+            <p>Email: support@tif-service.com | Phone: +1 (123) 456-7890</p>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 TIF Service. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

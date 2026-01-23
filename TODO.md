@@ -1,8 +1,5 @@
-# TODO: Fix Close Button in Login Sidebar
+# TODO: Add More Restaurants, Food Categories, and Bottom Bar
 
-- [x] Add a title bar div to the sidebar HTML structure
-- [x] Update .sidebar CSS to include title bar styling
-- [x] Style the title bar with normal height and background
-- [x] Adjust .close-btn CSS to position it in the title bar as a small square button
-- [x] Change the close button symbol to ❌
-- [x] Adjust sidebar padding to prevent content overlap with title bar
+- [x] Add more food categories to the "What's on your mind?" section (e.g., South Indian, Desserts, Beverages, Fast Food)
+- [x] Add more restaurants to the "Top restaurants in your area" section (e.g., McDonald's, KFC, Domino's)
+- [x] Add a footer/bottom bar at the end of index.html with links, contact info, and copyright
