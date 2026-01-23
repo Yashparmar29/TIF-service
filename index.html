@@ -165,10 +165,18 @@
             background: white;
             box-shadow: -2px 0 5px rgba(0,0,0,0.5);
             transition: right 0.3s;
-            padding: 2rem;
             box-sizing: border-box;
             overflow-y: auto;
             z-index: 101;
+        }
+        .sidebar-title-bar {
+            height: 40px;
+            background: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+            position: relative;
+        }
+        .sidebar > div {
+            padding: 2rem;
         }
         .sidebar.open {
             right: 0;
@@ -220,15 +228,18 @@
         }
         .sidebar .close-btn {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #f0f0f0;
-            border: 1px solid #ccc;
-            padding: 0.25rem 0.5rem;
-            font-size: 0.8rem;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: none;
+            font-size: 1.2rem;
             cursor: pointer;
             color: #333;
-            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .sidebar .switch-form {
             text-align: center;
@@ -322,7 +333,9 @@
     </section>
 
     <div id="sidebar" class="sidebar">
-        <button class="close-btn" onclick="closeSidebar()">&times;</button>
+        <div class="sidebar-title-bar">
+            <button class="close-btn" onclick="closeSidebar()">&#10060;</button>
+        </div>
         <div id="loginForm" style="display: none;">
             <h2>Login to TIF Service</h2>
             <form id="loginFormEl">
