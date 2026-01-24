@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIF Service - Burgers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .navbar {
+            background-color: #cb202d;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .navbar .location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .navbar .search {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 2rem;
+        }
+        .navbar input {
+            width: 100%;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+        }
+        .navbar .right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .hero {
+            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero .search-bar {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+        }
+        .hero input {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .hero button {
+            padding: 1rem 2rem;
+            background-color: #cb202d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        .section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .food-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .food-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .food-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .food-item .info {
+            padding: 1rem;
+        }
+        .food-item h3 {
+            margin-bottom: 0.5rem;
+        }
+        .food-item p {
+            color: #666;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .footer .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer .contact {
+            margin-bottom: 1rem;
+        }
+        .footer .copyright {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" style="color: white;">TIF Service</a></div>
+        <div class="location">
+            <span>📍</span>
+            <span>Select Location</span>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search for restaurants, food...">
+        </div>
+        <div class="right">
+            <a href="#" onclick="openSidebar('login'); return false;">Sign In</a>
+            <a href="#">Cart</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="search-bar">
+            <h1>Burgers</h1>
+            <input type="text" placeholder="Enter your delivery address">
+            <button>Find Food</button>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2>Burger Items</h2>
+        <div class="food-items">
+            <div class="food-item">
+                <img src="Pictures/burger.jfif" alt="Cheese Burger">
+                <div class="info">
+                    <h3>Cheese Burger</h3>
+                    <p>$5.99</p>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="Pictures/burger.jfif" alt="Veggie Burger">
+                <div class="info">
+                    <h3>Veggie Burger</h3>
+                    <p>$4.99</p>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="Pictures/burger.jfif" alt="Chicken Burger">
+                <div class="info">
+                    <h3>Chicken Burger</h3>
+                    <p>$6.49</p>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="Pictures/burger.jfif" alt="Double Cheese Burger">
+                <div class="info">
+                    <h3>Double Cheese Burger</h3>
+                    <p>$7.99</p>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="Pictures/burger.jfif" alt="Spicy Burger">
+                <div class="info">
+                    <h3>Spicy Burger</h3>
+                    <p>$5.49</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="links">
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="contact">
+            <p>Email: support@tif-service.com | Phone: +1 (123) 456-7890</p>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 TIF Service. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

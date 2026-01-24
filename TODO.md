@@ -1,5 +1,14 @@
-# TODO: Add More Restaurants, Food Categories, and Bottom Bar
+# TODO: Add Category-wise Pages with Food Items
 
-- [x] Add more food categories to the "What's on your mind?" section (e.g., South Indian, Desserts, Beverages, Fast Food)
-- [x] Add more restaurants to the "Top restaurants in your area" section (e.g., McDonald's, KFC, Domino's)
-- [x] Add a footer/bottom bar at the end of index.html with links, contact info, and copyright
+- [x] Edit index.html: Make each category div clickable to redirect to respective category page (e.g., burger.html)
+- [x] Create burger.html: Display burger food items with names and prices
+- [ ] Create pizza.html: Display pizza food items with names and prices
+- [ ] Create biryani.html: Display biryani food items with names and prices
+- [ ] Create chinese.html: Display Chinese food items with names and prices
+- [ ] Create icecream.html: Display ice cream food items with names and prices
+- [ ] Create northindian.html: Display North Indian food items with names and prices
+- [ ] Create southindian.html: Display South Indian food items with names and prices
+- [ ] Create desserts.html: Display dessert food items with names and prices
+- [ ] Create beverages.html: Display beverage food items with names and prices
+- [ ] Create fastfood.html: Display fast food items with names and prices
+- [ ] Test all links and pages for functionality
