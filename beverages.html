@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ert ert<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -156,11 +156,103 @@
         }
         .footer .copyright {
             font-size: 0.9rem;
-            color: #ccc;
+</head>
+        }
+<body>
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100%;
+            background: white;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+            transition: right 0.3s;
+            box-sizing: border-box;
+            overflow-y: auto;
+            z-index: 101;
+        }
+        .sidebar-title-bar {
+            height: 40px;
+            background: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+            position: relative;
+        }
+        .sidebar > div {
+            padding: 2rem;
+        }
+        .sidebar.open {
+            right: 0;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .sidebar .form-group {
+            margin-bottom: 1rem;
+        }
+        .sidebar label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        .sidebar input[type="text"], .sidebar input[type="email"], .sidebar input[type="tel"], .sidebar input[type="password"], .sidebar textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .sidebar textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .sidebar button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #cb202d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-bottom: 1rem;
+        }
+        .sidebar button:hover {
+            background: #a01823;
+        }
+        .sidebar .error {
+            color: red;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        .sidebar .close-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sidebar .switch-form {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .sidebar .switch-form a {
+            color: #cb202d;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
-</head>
-<body>
     <nav class="navbar">
         <div class="logo"><a href="index.html" style="color: white;">TIF Service</a></div>
         <div class="location">
