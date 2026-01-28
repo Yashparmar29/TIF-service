@@ -13,3 +13,6 @@
 - [x] Create fastfood.html: Display fast food items with names and prices
 - [x] Add login system to burger.html and pizza.html (as examples)
 - [ ] Test all links and pages for functionality
+- [ ] Add Cart and Like icons to navbar across all pages with badges
+- [ ] Implement cart and wishlist functionality with localStorage persistence
+- [ ] Convert to React app for state management using Context API
