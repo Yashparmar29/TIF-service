@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Login - TIF Service</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+    .login-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem 0; }
+    .login-container { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); width: 100%; max-width: 450px; }
+    .login-container h2 { text-align: center; margin-bottom: 2rem; color: #333; font-weight: 600; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; color: #555; font-weight: 500; }
+    .form-group input, .form-group textarea { width: 100%; padding: 0.75rem 1rem; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s; box-sizing: border-box; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #667eea; }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .submit-btn { width: 100%; padding: 0.75rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; transition: transform 0.2s; margin-bottom: 1rem; }
+    .submit-btn:hover { transform: translateY(-2px); }
+    .switch-form { text-align: center; margin-top: 1rem; }
+    .switch-form a { color: #667eea; text-decoration: none; cursor: pointer; font-weight: 500; }
+    .switch-form a:hover { text-decoration: underline; }
+    .register-fields { display: none; }
+  </style>
+</head>
+<body>
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html"><span>TIF-service</span></a>
+          <div class="">
+            <div class="User_option">
+              <a href="login.html"><i class="fa fa-user"></i><span>Login</span></a>
+              <form class="form-inline"><input type="search" placeholder="Search" /><button class="btn nav_search-btn" type="submit"><i class="fa fa-search"></i></button></form>
+            </div>
+            <div class="custom_menu-btn"><button onclick="openNav()"><img src="images/menu.png" alt=""></button></div>
+            <div id="myNav" class="overlay"><div class="overlay-content"><a href="index.html">Home</a><a href="about.html">About</a><a href="blog.html">Blog</a><a href="testimonial.html">Testimonial</a></div></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+  <section class="login-section">
+    <div class="container">
+      <div class="login-container">
+        <h2 id="form-title">Login to TIF Service</h2>
+        <form id="auth-form">
+          <div class="register-fields" id="register-fields">
+            <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required></div>
+            <div class="form-group"><label for="mobile">Mobile Number</label><input type="tel" id="mobile" name="mobile" required></div>
+            <div class="form-group"><label for="address">Address</label><textarea id="address" name="address" required></textarea></div>
+          </div>
+          <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+          <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password" required minlength="6"></div>
+          <button type="submit" class="submit-btn" id="submit-btn">Login</button>
+        </form>
+        <div class="switch-form"><p id="switch-text">Don't have an account? <a href="#" id="switch-link">Register here</a></p></div>
+      </div>
+    </div>
+  </section>
+  <div class="footer_container">
+    <section class="info_section"><div class="container"><div class="contact_box"><a href=""><i class="fa fa-map-marker"></i></a><a href=""><i class="fa fa-phone"></i></a><a href=""><i class="fa fa-envelope"></i></a></div><div class="info_links"><ul><li class="active"><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="testimonial.html">Testimonial</a></li></ul></div><div class="social_box"><a href=""><i class="fa fa-facebook"></i></a><a href=""><i class="fa fa-twitter"></i></a><a href=""><i class="fa fa-linkedin"></i></a></div></div></section>
+    <footer class="footer_section"><div class="container"><p>&copy; <span id="displayYear"></span> All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>Distributed By: <a href="https://themewagon.com/">ThemeWagon</a></p></div></footer>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    $(document).ready(function() {
+      let isLogin = true;
+      $('#switch-link').click(function(e) {
+        e.preventDefault();
+        isLogin = !isLogin;
+        if (isLogin) {
+          $('#form-title').text('Login to TIF Service');
+          $('#register-fields').hide();
+          $('#submit-btn').text('Login');
+          $('#switch-text').html('Don\'t have an account? <a href="#" id="switch-link">Register here</a>');
+        } else {
+          $('#form-title').text('Register for TIF Service');
+          $('#register-fields').show();
