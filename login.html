@@ -1,9 +1,9 @@
-age <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>Login - TIF Service</title>
+  <title>Registration - TIF Service</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet" />
@@ -51,7 +51,7 @@ age <!DOCTYPE html>
         <div class="login-container">
           <h2 id="form-title">Login to TIF Service</h2>
           <form id="auth-form">
-            <div class="register-fields" id="register-fields">
+            <div class="register-fields" id="register-fields" style="display: none;">
               <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required><i class="fa fa-user"></i></div>
               <div class="form-group"><label for="mobile">Mobile Number</label><input type="tel" id="mobile" name="mobile" required><i class="fa fa-phone"></i></div>
               <div class="form-group"><label for="address">Address</label><textarea id="address" name="address" required></textarea></div>
@@ -70,8 +70,8 @@ age <!DOCTYPE html>
   <script src="js/custom.js"></script>
   <script>
     $(document).ready(function() {
-      let isLogin = true;
-      $('#switch-link').click(function(e) {
+      let isLogin = true; // start with login
+      $(document).on('click', '#switch-link', function(e) {
         e.preventDefault();
         isLogin = !isLogin;
         if (isLogin) {
@@ -83,7 +83,7 @@ age <!DOCTYPE html>
           $('#form-title').text('Register for TIF Service');
           $('#register-fields').show();
           $('#submit-btn').text('Register');
-          $('#switch-text').html('Already have an account? <a href="#" id="switch-link">Login here</a>');
+          $('#switch-text').html('Already Have An Account? <a href="#" id="switch-link">Login Here</a>');
         }
       });
       $('#auth-form').submit(function(e) {
