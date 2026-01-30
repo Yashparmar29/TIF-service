@@ -83,3 +83,15 @@
         } else {
           $('#form-title').text('Register for TIF Service');
           $('#register-fields').show();
+          $('#submit-btn').text('Register');
+          $('#switch-text').html('Already have an account? <a href="#" id="switch-link">Login here</a>');
+        }
+      });
+      $('#auth-form').submit(function(e) {
+        e.preventDefault();
+        alert(isLogin ? 'Login successful!' : 'Registration successful!');
+      });
+    });
+  </script>
+</body>
+</html>
