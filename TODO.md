@@ -16,3 +16,8 @@
 - [x] Add Cart and Like icons to navbar across all pages with badges
 - [x] Implement cart and wishlist functionality with localStorage persistence
 - [x] Convert to React app for state management using Context API
+- [x] Create lunch.html: Display lunch food items with state-wise categories (Gujarati, Maharashtrian, Rajasthani)
+- [x] Create dinner.html: Display dinner food items with state-wise categories (Gujarati, Maharashtrian, Rajasthani)
+- [x] Update navigation menus in all pages to include Breakfast, Lunch, Dinner links
+- [x] Update footer links in all pages to include Breakfast, Lunch, Dinner
+- [x] Update index.html recipe section links for Lunch and Dinner

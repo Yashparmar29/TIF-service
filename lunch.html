@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>TIF-service</title>
+  <title>Lunch - TIF-service</title>
 
 
   <!-- bootstrap core css -->
@@ -35,9 +35,82 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
+  <style>
+    .breakfast-title {
+      background-color: #4855fe;
+      color: #ffffff;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .breakfast-title h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 0;
+      font-family: "bodoni svtytwo sc itc tt book", sans-serif;
+    }
+    .state-section {
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+    .state-section h2 {
+      color: #4855fe;
+      text-align: center;
+      margin-bottom: 40px;
+      font-family: "bodoni svtytwo sc itc tt book", sans-serif;
+      font-weight: 400;
+    }
+    .food-card {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .food-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transform: translateY(-5px);
+    }
+    .food-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+    .food-card .card-body {
+      padding: 20px;
+      text-align: center;
+    }
+    .food-card h5 {
+      color: #0c0c0c;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-family: "Poppins", sans-serif;
+    }
+    .food-card p {
+      color: #666;
+      margin-bottom: 15px;
+      font-family: "Poppins", sans-serif;
+    }
+    .food-card .btn {
+      background-color: #ffe537;
+      color: #000000;
+      border: 1px solid #ffe537;
+      border-radius: 25px;
+      padding: 8px 20px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+    .food-card .btn:hover {
+      background-color: transparent;
+      color: #ffe537;
+    }
+  </style>
+
 </head>
 
-<body class="sub_page">
+<body>
 
   <div class="hero_area">
     <!-- header section strats -->
@@ -51,7 +124,7 @@
           </a>
           <div class="" id="">
             <div class="User_option">
-              <a href="login.html">
+              <a href="">
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <span>Login</span>
               </a>
@@ -85,66 +158,129 @@
     <!-- end header section -->
   </div>
 
-  <!-- client section -->
-
-  <section class="client_section layout_padding">
+  <!-- title section -->
+  <section class="breakfast-title">
     <div class="container">
-      <div class="col-md-11 col-lg-10 mx-auto">
-        <div class="heading_container heading_center">
-          <h2>
-            Testimonial
-          </h2>
-        </div>
-        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="detail-box">
-                <h4>
-                  Virginia
-                </h4>
-                <p>
-                  Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-                </p>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="detail-box">
-                <h4>
-                  Virginia
-                </h4>
-                <p>
-                  Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-                </p>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="detail-box">
-                <h4>
-                  Virginia
-                </h4>
-                <p>
-                  Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-                </p>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-              </div>
+      <h1>Enjoy Regional Lunch Flavors</h1>
+    </div>
+  </section>
+
+  <!-- Gujarati section -->
+  <section class="state-section">
+    <div class="container">
+      <h2>Gujarati Lunch</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="food-card">
+            <img src="https://via.placeholder.com/300x200?text=Undhiyu" alt="Undhiyu">
+            <div class="card-body">
+              <h5>Undhiyu</h5>
+              <p>Mixed vegetable curry with dumplings, a traditional Gujarati dish.</p>
+              <button class="btn">Order Now</button>
             </div>
           </div>
-          <a class="carousel-control-prev d-none" href="#customCarousel1" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-          </a>
+        </div>
+        <div class="col-md-4">
+          <div class="food-card">
+            <img src="https://via.placeholder.com/300x200?text=Muthia" alt="Muthia">
+            <div class="card-body">
+              <h5>Muthia</h5>
+              <p>Steamed dumplings made from chickpea flour and spices.</p>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="food-card">
+            <img src="https://via.placeholder.com/300x200?text=Kadhi" alt="Kadhi">
+            <div class="card-body">
+              <h5>Kadhi</h5>
+              <p>Yogurt-based curry with chickpea flour dumplings.</p>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- end client section -->
+  <!-- Maharashtrian section -->
+  <section class="state-section">
+    <div class="container">
+      <h2>Maharashtrian Lunch</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="food-card">
+            <img src="https://via.placeholder.com/300x200?text=Pav+Bhaji" alt="Pav Bhaji">
+            <div class="card-body">
+              <h5>Pav Bhaji</h5>
+              <p>Spicy vegetable mash served with buttered bread rolls.</p>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="food-card">
+            <img src="https://via.placeholder.com/300x200?text=Vada+Pav" alt="Vada Pav">
+            <div class="card-body">
+              <h5>Vada Pav</h5>
+              <p>Spicy potato fritter in a bun, a popular street food.</p>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="food-card">
+            <img src="https://via.placeholder.com/300x200?text=Maharashtrian+Thali" alt="Maharashtrian Thali">
+            <div class="card-body">
+              <h5>Maharashtrian Thali</h5>
+              <p>Assortment of rice, dal, vegetables, and bread.</p>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rajasthani section -->
+  <section class="state-section">
+    <div class="container">
+      <h2>Rajasthani Lunch</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="food-card">
+            <img src="https://via.placeholder.com/300x200?text=Dal+Bati+Churma" alt="Dal Bati Churma">
+            <div class="card-body">
+              <h5>Dal Bati Churma</h5>
+              <p>Lentils with baked dumplings and sweet crumble.</p>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="food-card">
+            <img src="https://via.placeholder.com/300x200?text=Laal+Maas" alt="Laal Maas">
+            <div class="card-body">
+              <h5>Laal Maas</h5>
+              <p>Spicy red meat curry, a Rajasthani specialty.</p>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="food-card">
+            <img src="https://via.placeholder.com/300x200?text=Ker+Sangri" alt="Ker Sangri">
+            <div class="card-body">
+              <h5>Ker Sangri</h5>
+              <p>Desert beans and berries curry.</p>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="footer_container">
     <!-- info section -->
