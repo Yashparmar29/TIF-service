@@ -7,4 +7,4 @@ add# TODO for Adding Tiffin Pictures to Breakfast, Lunch, Dinner Pages
 
 - [x] Edit lunch.html: Same replacements as breakfast.html
 
-- [ ] Edit dinner.html: Same replacements as breakfast.html
+- [x] Edit dinner.html: Same replacements as breakfast.html
