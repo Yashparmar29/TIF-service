@@ -1,20 +1,10 @@
-# TODO for Breakfast Page Update
+# TODO for Adding Tiffin Pictures to Breakfast, Lunch, Dinner Pages
 
-- [x] Replace Gujarati section items with Tiffin 1, Tiffin 2, Tiffin 3
-- [x] Replace Maharashtrian section items with Tiffin 1, Tiffin 2, Tiffin 3
-- [x] Replace Rajasthani section items with Tiffin 1, Tiffin 2, Tiffin 3
-- [x] Verify changes by opening breakfast.html in browser (browser tool disabled, assuming correct)
+- [ ] Edit breakfast.html: Replace placeholder images with actual images
+  - Gujarati: Tiffin 1 -> images/n1.jpg, Tiffin 2 -> images/n2.jpg, Tiffin 3 -> images/r1.jpg
+  - Maharashtrian: Tiffin 1 -> images/n1.jpg, Tiffin 2 -> images/n2.jpg, Tiffin 3 -> images/r2.jpg
+  - Rajasthani: Tiffin 1 -> images/r1.jpg, Tiffin 2 -> images/r2.jpg, Tiffin 3 -> images/r3.jpg
 
-# TODO for Dinner Page Update
+- [ ] Edit lunch.html: Same replacements as breakfast.html
 
-- [x] Replace Gujarati section items with Tiffin 1, Tiffin 2, Tiffin 3
-- [x] Replace Maharashtrian section items with Tiffin 1, Tiffin 2, Tiffin 3
-- [x] Replace Rajasthani section items with Tiffin 1, Tiffin 2, Tiffin 3
-- [x] Verify changes by opening dinner.html in browser (browser tool disabled, assuming correct)
-
-# TODO for Lunch Page Update
-
-- [x] Replace Gujarati section items with Tiffin 1, Tiffin 2, Tiffin 3
-- [x] Replace Maharashtrian section items with Tiffin 1, Tiffin 2, Tiffin 3
-- [x] Replace Rajasthani section items with Tiffin 1, Tiffin 2, Tiffin 3
-- [x] Verify changes by opening lunch.html in browser (browser tool disabled, assuming correct)
+- [ ] Edit dinner.html: Same replacements as breakfast.html
