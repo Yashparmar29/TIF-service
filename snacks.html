@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Snacks - TIF-service</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- nice select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+  <!-- slidck slider -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css.map" integrity="undefined" crossorigin="anonymous" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    .snacks-title {
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      color: #ffffff;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .snacks-title h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 0;
+      font-family: "bodoni svtytwo sc itc tt book", sans-serif;
+    }
+    .snacks-title p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
+    .snack-section {
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+    .snack-section h2 {
+      color: #6c5ce7;
+      text-align: center;
+      margin-bottom: 40px;
+      font-family: "bodoni svtytwo sc itc tt book", sans-serif;
+      font-weight: 400;
+    }
+    .snack-card {
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .snack-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transform: translateY(-5px);
+    }
+    .snack-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .snack-card .card-body {
+      padding: 20px;
+      text-align: center;
+    }
+    .snack-card h5 {
+      color: #0c0c0c;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .snack-card p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .snack-card .price {
+      font-size: 1.2rem;
+      color: #6c5ce7;
+      font-weight: bold;
+      margin-bottom: 15px;
+      display: block;
+    }
+    .snack-card .btn {
+      background-color: #6c5ce7;
+      color: #ffffff;
+      border: 1px solid #6c5ce7;
+      border-radius: 25px;
+      padding: 8px 20px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+    .snack-card .btn:hover {
+      background-color: transparent;
+      color: #6c5ce7;
+    }
+  </style>
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>TIF-service</span>
+          </a>
+
+          <div class="" id="">
+            <div class="User_option">
+              <a href="login.html">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span>Login</span>
+              </a>
+
+              <form class="form-inline">
+                <input type="search" placeholder="Search" />
+                <button class="btn nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <img src="images/menu.png" alt="Menu">
+              </button>
+            </div>
+
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="testimonial.html">Testimonial</a>
+                <a href="breakfast.html">Breakfast</a>
+                <a href="lunch.html">Lunch</a>
+                <a href="dinner.html">Dinner</a>
+                <a href="desserts.html">Desserts</a>
+                <a href="snacks.html" class="active">Snacks</a>
+                <a href="beverages.html">Beverages</a>
+                <a href="contact.html">Contact</a>
+                <a href="gallery.html">Gallery</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- title section -->
+  <section class="snacks-title">
+    <div class="container">
+      <h1>Delicious Snacks</h1>
+      <p>Perfect bites for any time of the day</p>
+    </div>
+  </section>
+
+  <!-- Street Food section -->
+  <section class="snack-section">
+    <div class="container">
+      <h2>Indian Street Food</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="snack-card">
+            <img src="images/r1.jpg" alt="Pav Bhaji">
+            <div class="card-body">
+              <h5>Pav Bhaji</h5>
+              <p>Mumbai's famous spicy vegetable curry with buttered bread.</p>
+              <span class="price">₹80</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="snack-card">
+            <img src="images/r2.jpg" alt="Dahi Puri">
+            <div class="card-body">
+              <h5>Dahi Puri</h5>
+              <p>Crispy puris filled with potatoes, chickpeas, and yogurt.</p>
+              <span class="price">₹60</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="snack-card">
+            <img src="images/r3.jpg" alt="Bhel Puri">
+            <div class="card-body">
+              <h5>Bhel Puri</h5>
+              <p>Puffed rice mixed with vegetables, chutneys, and spices.</p>
+              <span class="price">₹50</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- South Indian Snacks section -->
+  <section class="snack-section">
+    <div class="container">
+      <h2>South Indian Snacks</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="snack-card">
+            <img src="images/n1.jpg" alt="Medu Vada">
+            <div class="card-body">
+              <h5>Medu Vada</h5>
+              <p>Crispy lentil doughnuts served with sambar and chutney.</p>
+              <span class="price">₹70</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="snack-card">
+            <img src="images/n2.jpg" alt="Masala Dosa">
+            <div class="card-body">
+              <h5>Masala Dosa</h5>
+              <p>Thin rice crepes filled with spiced potato curry.</p>
+              <span class="price">₹100</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="snack-card">
+            <img src="images/r1.jpg" alt="Idli Sambar">
+            <div class="card-body">
+              <h5>Idli Sambar</h5>
+              <p>Steamed rice cakes with lentil vegetable stew.</p>
+              <span class="price">₹80</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- North Indian Snacks section -->
+  <section class="snack-section">
+    <div class="container">
+      <h2>North Indian Snacks</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="snack-card">
+            <img src="images/r2.jpg" alt="Samosa">
+            <div class="card-body">
+              <h5>Samosa</h5>
+              <p>Triangular pastry filled with spiced potatoes and peas.</p>
+              <span class="price">₹30/piece</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="snack-card">
+            <img src="images/r3.jpg" alt="Kachori">
+            <div class="card-body">
+              <h5>Kachori</h5>
+              <p>Flaky deep-fried pastry filled with lentils and spices.</p>
+              <span class="price">₹25/piece</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="snack-card">
+            <img src="images/n1.jpg" alt="Aloo Tikki">
+            <div class="card-body">
+              <h5>Aloo Tikki</h5>
+              <p>Crispy potato patties served with chole or chutney.</p>
+              <span class="price">₹60</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gujarati Snacks section -->
+  <section class="snack-section">
+    <div class="container">
+      <h2>Gujarati Snacks</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="snack-card">
+            <img src="images/n2.jpg" alt="Dhokla">
+            <div class="card-body">
+              <h5>Dhokla</h5>
+              <p>Steamed fermented gram flour cake with tempering.</p>
+              <span class="price">₹50</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="snack-card">
+            <img src="images/r1.jpg" alt="Thepla">
+            <div class="card-body">
+              <h5>Thepla</h5>
+              <p>Spiced flatbread made with wheat flour and methi.</p>
+              <span class="price">₹60</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="snack-card">
+            <img src="images/r3.jpg" alt="Khandvi">
+            <div class="card-body">
+              <h5>Khandvi</h5>
+              <p>Rolled gram flour sheets tempered with sesame and cumin.</p>
+              <span class="price">₹70</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer_container">
+    <!-- info section -->
+    <section class="info_section ">
+      <div class="container">
+        <div class="contact_box">
+          <a href="">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+          </a>
+          <a href="">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="info_links">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="about.html">About</a>
+            </li>
+            <li>

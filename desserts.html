@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Desserts - TIF-service</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- nice select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+  <!-- slidck slider -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css.map" integrity="undefined" crossorigin="anonymous" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    .desserts-title {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+      color: #ffffff;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .desserts-title h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 0;
+      font-family: "bodoni svtytwo sc itc tt book", sans-serif;
+    }
+    .desserts-title p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
+    .dessert-section {
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+    .dessert-section h2 {
+      color: #ee5a24;
+      text-align: center;
+      margin-bottom: 40px;
+      font-family: "bodoni svtytwo sc itc tt book", sans-serif;
+      font-weight: 400;
+    }
+    .dessert-card {
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .dessert-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transform: translateY(-5px);
+    }
+    .dessert-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .dessert-card .card-body {
+      padding: 20px;
+      text-align: center;
+    }
+    .dessert-card h5 {
+      color: #0c0c0c;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .dessert-card p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .dessert-card .price {
+      font-size: 1.2rem;
+      color: #ee5a24;
+      font-weight: bold;
+      margin-bottom: 15px;
+      display: block;
+    }
+    .dessert-card .btn {
+      background-color: #ee5a24;
+      color: #ffffff;
+      border: 1px solid #ee5a24;
+      border-radius: 25px;
+      padding: 8px 20px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+    .dessert-card .btn:hover {
+      background-color: transparent;
+      color: #ee5a24;
+    }
+  </style>
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>TIF-service</span>
+          </a>
+
+          <div class="" id="">
+            <div class="User_option">
+              <a href="login.html">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span>Login</span>
+              </a>
+
+              <form class="form-inline">
+                <input type="search" placeholder="Search" />
+                <button class="btn nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <img src="images/menu.png" alt="Menu">
+              </button>
+            </div>
+
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="testimonial.html">Testimonial</a>
+                <a href="breakfast.html">Breakfast</a>
+                <a href="lunch.html">Lunch</a>
+                <a href="dinner.html">Dinner</a>
+                <a href="desserts.html">Desserts</a>
+                <a href="snacks.html">Snacks</a>
+                <a href="beverages.html">Beverages</a>
+                <a href="contact.html">Contact</a>
+                <a href="gallery.html">Gallery</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- title section -->
+  <section class="desserts-title">
+    <div class="container">
+      <h1>Sweet Indulgences</h1>
+      <p>Discover the finest Indian desserts and sweets</p>
+    </div>
+  </section>
+
+  <!-- Gujarati Desserts section -->
+  <section class="dessert-section">
+    <div class="container">
+      <h2>Gujarati Sweets</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="dessert-card">
+            <img src="images/r1.jpg" alt="Mohanthal">
+            <div class="card-body">
+              <h5>Mohanthal</h5>
+              <p>Traditional Gujarati sweet made with gram flour, ghee, and sugar.</p>
+              <span class="price">₹350/kg</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dessert-card">
+            <img src="images/r2.jpg" alt="Gulab Jamun">
+            <div class="card-body">
+              <h5>Gulab Jamun</h5>
+              <p>Soft and melt-in-your-mouth dumplings soaked in sugar syrup.</p>
+              <span class="price">₹300/kg</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dessert-card">
+            <img src="images/r3.jpg" alt="Badusha">
+            <div class="card-body">
+              <h5>Badusha</h5>
+              <p>Crispy yet soft diamond-shaped sweet made with flour and ghee.</p>
+              <span class="price">₹320/kg</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- North Indian Desserts section -->
+  <section class="dessert-section">
+    <div class="container">
+      <h2>North Indian Sweets</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="dessert-card">
+            <img src="images/n1.jpg" alt="Rasgulla">
+            <div class="card-body">
+              <h5>Rasgulla</h5>
+              <p>Soft cottage cheese balls cooked in light sugar syrup.</p>
+              <span class="price">₹280/kg</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dessert-card">
+            <img src="images/n2.jpg" alt="Kaju Katli">
+            <div class="card-body">
+              <h5>Kaju Katli</h5>
+              <p>Premium diamond-shaped sweet made with cashews and silver leaf.</p>
+              <span class="price">₹900/kg</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dessert-card">
+            <img src="images/r1.jpg" alt="Motichur Ladoo">
+            <div class="card-body">
+              <h5>Motichur Ladoo</h5>
+              <p>Delicate boondi balls rolled into sweet round laddoos.</p>
+              <span class="price">₹350/kg</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- South Indian Desserts section -->
+  <section class="dessert-section">
+    <div class="container">
+      <h2>South Indian Sweets</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="dessert-card">
+            <img src="images/r2.jpg" alt="Mysore Pak">
+            <div class="card-body">
+              <h5>Mysore Pak</h5>
+              <p>Rich and buttery gram flour fudge from Karnataka.</p>
+              <span class="price">₹400/kg</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dessert-card">
+            <img src="images/r3.jpg" alt="Payasam Mix">
+            <div class="card-body">
+              <h5>Payasam Mix</h5>
+              <p>Traditional South Indian rice kheer mix for authentic taste.</p>
+              <span class="price">₹250/kg</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dessert-card">
+            <img src="images/n1.jpg" alt="Halwa">
+            <div class="card-body">
+              <h5>Halwa Variety</h5>
+              <p>Assorted halwas including carrot, wheat, and sooji.</p>
+              <span class="price">₹200/kg</span>
+              <button class="btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer_container">
+    <!-- info section -->
+    <section class="info_section ">
+      <div class="container">
+        <div class="contact_box">
+          <a href="">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+          </a>
+          <a href="">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="info_links">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="about.html">About</a>
+            </li>
+            <li>
+              <a href="blog.html">Blog</a>
+            </li>
+            <li>
+              <a href="testimonial.html">Testimonial</a>
+            </li>
+            <li>
+              <a href="breakfast.html">Breakfast</a>
+            </li>
+            <li>
+              <a href="lunch.html">Lunch</a>
+            </li>
+            <li>
+              <a href="dinner.html">Dinner</a>
+            </li>
+            <li class="active">
+              <a href="desserts.html">Desserts</a>
+            </li>
+            <li>
+              <a href="snacks.html">Snacks</a>
+            </li>
+            <li>
+              <a href="beverages.html">Beverages</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+            <li>
+              <a href="gallery.html">Gallery</a>
+            </li>
+          </ul>
+        </div>
+        <div class="social_box">
+          <a href="">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </a>
+          <a href="">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end info_section -->
+
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">Free Html Templates</a><br>
+          Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+        </p>
+      </div>
+    </footer>
+    <!-- footer section -->
+  </div>
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- slick  slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+</body>
+</html>
