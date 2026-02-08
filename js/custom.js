@@ -16,6 +16,34 @@ function openNav() {
 // nice select
 $(document).ready(function () {
     $('select').niceSelect();
+
+    // search functionality
+    if ($('.food-card').length > 0) {
+        function performSearch() {
+            var searchTerm = $('.form-inline input[type="search"]').val().toLowerCase();
+            $('.food-card').each(function() {
+                var title = $(this).find('h5').text().toLowerCase();
+                var description = $(this).find('p').text().toLowerCase();
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        }
+
+        $('.form-inline input[type="search"]').on('input', performSearch);
+
+        $('.form-inline .nav_search-btn').on('click', function(e) {
+            e.preventDefault();
+            performSearch();
+        });
+
+        // prevent form submission
+        $('.form-inline').on('submit', function(e) {
+            e.preventDefault();
+        });
+    }
 });
 
 // slick slider
