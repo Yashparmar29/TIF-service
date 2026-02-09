@@ -17,7 +17,7 @@
   - Add ids to section elements
   - Update link texts to "Lunch" variants
 
-- [ ] Add sidebar menu to dinner.html similar to breakfast.html
+- [x] Add sidebar menu to dinner.html similar to breakfast.html
   - Add sidebar CSS styles
   - Add sidebar HTML with links to sections
   - Add ids to section elements
