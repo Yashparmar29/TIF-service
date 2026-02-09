@@ -1,4 +1,4 @@
-# TODO for Adding Tiffin Pictures to Breakfast, Lunch, Dinner Pages
+# TnODO for Adding Tiffin Pictures to Breakfast, Lunch, Dinner Pages
 
 - [x] Edit breakfast.html: Replace placeholder images with actual images
   - Gujarati: Tiffin 1 -> images/n1.jpg, Tiffin 2 -> images/n2.jpg, Tiffin 3 -> images/r1.jpg
