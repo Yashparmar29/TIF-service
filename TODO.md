@@ -11,7 +11,7 @@
 
 # TODO for Adding Sidebar Menu to Lunch and Dinner Pages
 
-- [ ] Add sidebar menu to lunch.html similar to breakfast.html
+- [x] Add sidebar menu to lunch.html similar to breakfast.html
   - Add sidebar CSS styles
   - Add sidebar HTML with links to sections
   - Add ids to section elements
