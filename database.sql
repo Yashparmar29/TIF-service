@@ -59,6 +59,18 @@ CREATE TABLE IF NOT EXISTS order_items (
     FOREIGN KEY (menu_item_id) REFERENCES menu_items(id)
 );
 
+-- Table: Site Settings
+CREATE TABLE IF NOT EXISTS site_settings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    site_name VARCHAR(255) NOT NULL,
+    site_description TEXT,
+    contact_email VARCHAR(255),
+    contact_phone VARCHAR(20),
+    address TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
 -- Insert Sample Categories
 INSERT INTO categories (name, description) VALUES
 ('Breakfast', 'Start your day with our delicious breakfast options'),
@@ -76,3 +88,7 @@ INSERT INTO menu_items (category_id, name, description, price) VALUES
 (3, 'Steak Dinner', 'Grilled steak with vegetables', 18.99),
 (3, 'Fish and Chips', 'Crispy fish with fries', 14.99),
 (3, 'Vegetable Curry', 'Authentic vegetable curry with rice', 12.99);
+
+-- Insert Sample Site Settings
+INSERT INTO site_settings (site_name, site_description, contact_email, contact_phone, address) VALUES
+('TIF Service', 'Your go-to food delivery service', 'info@tifservice.com', '+1-234-567-8900', '123 Main St, City, State 12345');
