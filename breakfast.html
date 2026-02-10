@@ -211,26 +211,27 @@
     </div>
   </section>
 
-  <!-- Gujarati section -->
-  <section class="state-section breakfast-section" data-category="gujarati">
+  <!-- Sidebar Filter Menu (Always Visible) -->
+  <section class="state-section">
     <div class="container">
       <div class="row">
-              <!-- Left Menu -->
-      <div class="col-md-3">
-        <div class="sidebar">
-          <h4>Filter Breakfast</h4>
-          <ul>
-            <li><a href="#" class="filter-btn active" data-filter="all">All Breakfast</a></li>
-            <li><a href="#" class="filter-btn" data-filter="gujarati">Gujarati Breakfast</a></li>
-            <li><a href="#" class="filter-btn" data-filter="maharashtrian">Maharashtrian Breakfast</a></li>
-            <li><a href="#" class="filter-btn" data-filter="rajasthani">Rajasthani Breakfast</a></li>
-          </ul>
+        <div class="col-md-3">
+          <div class="sidebar">
+            <h4>Filter Breakfast</h4>
+            <ul>
+              <li><a href="#" class="filter-btn active" data-filter="all">All Breakfast</a></li>
+              <li><a href="#" class="filter-btn" data-filter="gujarati">Gujarati Breakfast</a></li>
+              <li><a href="#" class="filter-btn" data-filter="maharashtrian">Maharashtrian Breakfast</a></li>
+              <li><a href="#" class="filter-btn" data-filter="rajasthani">Rajasthani Breakfast</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      </div>
-      <h2>Gujarati Breakfast</h2>
-      <div class="row">
+        <div class="col-md-9">
+          
+          <!-- Gujarati section -->
+          <section class="breakfast-section" data-category="gujarati">
+            <h2>Gujarati Breakfast</h2>
+            <div class="row">
         <div class="col-md-4">
           <div class="food-card">
             <img src="images/n1.jpg" alt="Tiffin 1">
@@ -262,14 +263,18 @@
           </div>
         </div>
       </div>
+      <!-- End of Gujarati section within col-md-9 -->
+      </div>
     </div>
   </section>
 
   <!-- Maharashtrian section -->
-  <section class="state-section breakfast-section" data-category="maharashtrian">
+  <section class="breakfast-section" data-category="maharashtrian">
     <div class="container">
-      <h2>Maharashtrian Breakfast</h2>
       <div class="row">
+        <div class="col-md-12">
+          <h2>Maharashtrian Breakfast</h2>
+          <div class="row">
         <div class="col-md-4">
           <div class="food-card">
             <img src="images/n1.jpg" alt="Tiffin 1">
@@ -303,12 +308,16 @@
       </div>
     </div>
   </section>
+  <!-- End of col-md-9 and main container -->
+  </div>
+  </div>
+</section>
 
-  <!-- Rajasthani section -->
-  <section class="state-section breakfast-section" data-category="rajasthani">
-    <div class="container">
-      <h2>Rajasthani Breakfast</h2>
-      <div class="row">
+<!-- Rajasthani section -->
+<section class="breakfast-section" data-category="rajasthani">
+  <div class="container">
+    <h2>Rajasthani Breakfast</h2>
+    <div class="row">
         <div class="col-md-4">
           <div class="food-card">
             <img src="images/r1.jpg" alt="Tiffin 1">
