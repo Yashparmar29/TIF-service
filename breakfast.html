@@ -78,6 +78,11 @@
   color: #ffffff;
 }
 
+.sidebar ul li a.active {
+  background: #4855fe;
+  color: #ffffff;
+}
+
     .breakfast-title {
       background-color: #4855fe;
       color: #ffffff;
@@ -207,19 +212,18 @@
   </section>
 
   <!-- Gujarati section -->
-  <section class="state-section">
+  <section class="state-section breakfast-section" data-category="gujarati">
     <div class="container">
       <div class="row">
               <!-- Left Menu -->
       <div class="col-md-3">
         <div class="sidebar">
-          <h4>Find Breakfast</h4>
+          <h4>Filter Breakfast</h4>
           <ul>
-            <li><a href="#gujarati">Gujarati Breakfast</a></li>
-            <li><a href="#maharashtrian">Maharashtrian Breakfast</a></li>
-            <li><a href="#rajasthani">Rajasthani Breakfast</a></li>
-            <li><a href="healthy-options.html">Healthy Options</a></li>
-            <li><a href="quick-meals.html">Quick Meals</a></li>
+            <li><a href="#" class="filter-btn active" data-filter="all">All Breakfast</a></li>
+            <li><a href="#" class="filter-btn" data-filter="gujarati">Gujarati Breakfast</a></li>
+            <li><a href="#" class="filter-btn" data-filter="maharashtrian">Maharashtrian Breakfast</a></li>
+            <li><a href="#" class="filter-btn" data-filter="rajasthani">Rajasthani Breakfast</a></li>
           </ul>
         </div>
       </div>
@@ -262,7 +266,7 @@
   </section>
 
   <!-- Maharashtrian section -->
-  <section class="state-section">
+  <section class="state-section breakfast-section" data-category="maharashtrian">
     <div class="container">
       <h2>Maharashtrian Breakfast</h2>
       <div class="row">
@@ -301,7 +305,7 @@
   </section>
 
   <!-- Rajasthani section -->
-  <section class="state-section">
+  <section class="state-section breakfast-section" data-category="rajasthani">
     <div class="container">
       <h2>Rajasthani Breakfast</h2>
       <div class="row">
@@ -432,6 +436,41 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
+
+  <!-- Breakfast Filter Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const breakfastSections = document.querySelectorAll('.breakfast-section');
+      
+      // Show all sections by default
+      showCategory('all');
+      
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const category = this.getAttribute('data-filter');
+          
+          // Update active class on buttons
+          filterBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Filter sections
+          showCategory(category);
+        });
+      });
+      
+      function showCategory(category) {
+        breakfastSections.forEach(section => {
+          if (category === 'all' || section.getAttribute('data-category') === category) {
+            section.style.display = 'block';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
 
 
 </body>
