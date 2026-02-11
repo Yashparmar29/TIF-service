@@ -107,46 +107,56 @@
       color: #ffe537;
     }
     /* Left Sidebar Menu */
-.sidebar {
-  position: sticky;
-  top: 100px;
-  background: #f8f9fa;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
+ .sidebar {
+   position: sticky;
+   top: 100px;
+   background: #f8f9fa;
+   border-radius: 10px;
+   padding: 20px;
+   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+ }
 
-.sidebar h4 {
-  color: #4855fe;
-  font-weight: bold;
-  margin-bottom: 20px;
-  font-family: "Poppins", sans-serif;
-}
+ .sidebar h4 {
+   color: #4855fe;
+   font-weight: bold;
+   margin-bottom: 20px;
+   font-family: "Poppins", sans-serif;
+ }
 
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
+ .sidebar ul {
+   list-style: none;
+   padding: 0;
+ }
 
-.sidebar ul li {
-  margin-bottom: 12px;
-}
+ .sidebar ul li {
+   margin-bottom: 12px;
+ }
 
-.sidebar ul li a {
-  display: block;
-  padding: 10px 15px;
-  border-radius: 8px;
-  color: #000;
-  text-decoration: none;
-  background: #ffffff;
-  transition: 0.3s;
-  font-weight: 500;
-}
+ .sidebar ul li a {
+   display: block;
+   padding: 10px 15px;
+   border-radius: 8px;
+   color: #000;
+   text-decoration: none;
+   background: #ffffff;
+   transition: 0.3s;
+   font-weight: 500;
+ }
 
-.sidebar ul li a:hover {
-  background: #4855fe;
-  color: #ffffff;
-}
+ .sidebar ul li a:hover {
+   background: #4855fe;
+   color: #ffffff;
+ }
+
+ .sidebar ul li a.active {
+   background: #4855fe;
+   color: #ffffff;
+ }
+
+ .sidebar ul li a .active {
+   background: #4855fe;
+   color: #ffffff;
+ }
   </style>
 
 </head>
@@ -204,141 +214,144 @@
   <!-- end header section -->
 </div>
 
+
   <!-- title section -->
   <section class="breakfast-title">
     <div class="container">
-      <h1>Savor Regional Dinner Delights</h1>
+      <h1>Enjoy Regional Dinner Flavors</h1>
     </div>
   </section>
 
-  <!-- Gujarati section -->
-  <section class="state-section" id="gujarati">
+  <!-- Sidebar Filter Menu (Always Visible) -->
+  <section class="state-section">
     <div class="container">
       <div class="row">
-              <!-- Left Menu -->
-      <div class="col-md-3">
-        <div class="sidebar">
-          <h4>Find Dinner</h4>
-          <ul>
-            <li><a href="#gujarati">Gujarati Dinner</a></li>
-            <li><a href="#maharashtrian">Maharashtrian Dinner</a></li>
-            <li><a href="#rajasthani">Rajasthani Dinner</a></li>
-            <li><a href="healthy-options.html">Healthy Options</a></li>
-            <li><a href="quick-meals.html">Quick Meals</a></li>
-          </ul>
-        </div>
-      </div>
-
-      </div>
-      <h2>Gujarati Dinner</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="food-card">
-            <img src="images/n1.jpg" alt="Tiffin 1">
-            <div class="card-body">
-              <h5>Tiffin 1</h5>
-              <p>A delicious and nutritious tiffin meal for dinner, packed with flavors.</p>
-              <button class="btn">Order Now</button>
-            </div>
+        <div class="col-md-3">
+          <div class="sidebar">
+            <h4>Filter Dinner</h4>
+            <ul>
+              <li><a href="#" class="filter-btn active" data-filter="all">All Dinner</a></li>
+              <li><a href="#" class="filter-btn" data-filter="gujarati">Gujarati Dinner</a></li>
+              <li><a href="#" class="filter-btn" data-filter="maharashtrian">Maharashtrian Dinner</a></li>
+              <li><a href="#" class="filter-btn" data-filter="rajasthani">Rajasthani Dinner</a></li>
+              <li><a href="quick-meals.html" class="filter-btn">Quick Meals</a></li>
+              <li><a href="healthy-options.html" class="filter-btn">Healthy Options</a></li>
+            </ul>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="food-card">
-            <img src="images/n2.jpg" alt="Tiffin 2">
-            <div class="card-body">
-              <h5>Tiffin 2</h5>
-              <p>A wholesome tiffin option to end your day right.</p>
-              <button class="btn">Order Now</button>
+        <div class="col-md-9">
+          
+          <!-- Gujarati section -->
+          <section class="dinner-section" data-category="gujarati">
+            <h2>Gujarati Dinner</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="food-card">
+                  <img src="images/n1.jpg" alt="Kadhi">
+                  <div class="card-body">
+                    <h5>Kadhi</h5>
+                    <p>Yogurt-based curry with gram flour pakoras, a Gujarati classic.</p>
+                    <button class="btn">Order Now</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="food-card">
+                  <img src="images/n2.jpg" alt="Rice">
+                  <div class="card-body">
+                    <h5>Rice</h5>
+                    <p>Steamed basmati rice, perfect with Gujarati curries.</p>
+                    <button class="btn">Order Now</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="food-card">
+                  <img src="images/r1.jpg" alt="Dal">
+                  <div class="card-body">
+                    <h5>Dal</h5>
+                    <p>Traditional Gujarati lentil curry with spices.</p>
+                    <button class="btn">Order Now</button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="food-card">
-            <img src="images/r1.jpg" alt="Tiffin 3">
-            <div class="card-body">
-              <h5>Tiffin 3</h5>
-              <p>Enjoy this tasty tiffin for a satisfying dinner experience.</p>
-              <button class="btn">Order Now</button>
+          </section>
+          
+          <!-- Maharashtrian section -->
+          <section class="dinner-section" data-category="maharashtrian">
+            <h2>Maharashtrian Dinner</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="food-card">
+                  <img src="images/r2.jpg" alt="Varan Bhat">
+                  <div class="card-body">
+                    <h5>Varan Bhat</h5>
+                    <p>Lentil curry served with rice, a Maharashtrian staple.</p>
+                    <button class="btn">Order Now</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="food-card">
+                  <img src="images/r3.jpg" alt="Bharli Vangi">
+                  <div class="card-body">
+                    <h5>Bharli Vangi</h5>
+                    <p>Stuffed brinjal curry with coconut and peanuts.</p>
+                    <button class="btn">Order Now</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="food-card">
+                  <img src="images/n1.jpg" alt="Roti">
+                  <div class="card-body">
+                    <h5>Roti</h5>
+                    <p>Soft wheat flatbread, perfect with any curry.</p>
+                    <button class="btn">Order Now</button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Maharashtrian section -->
-  <section class="state-section" id="maharashtrian">
-    <div class="container">
-      <h2>Maharashtrian Dinner</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="food-card">
-            <img src="images/n1.jpg" alt="Tiffin 1">
-            <div class="card-body">
-              <h5>Tiffin 1</h5>
-              <p>A delicious and nutritious tiffin meal for dinner, packed with flavors.</p>
-              <button class="btn">Order Now</button>
+          </section>
+          
+          <!-- Rajasthani section -->
+          <section class="dinner-section" data-category="rajasthani">
+            <h2>Rajasthani Dinner</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="food-card">
+                  <img src="images/r1.jpg" alt="Dal Baati Churma">
+                  <div class="card-body">
+                    <h5>Dal Baati Churma</h5>
+                    <p>Traditional Rajasthani lentils with baked wheat balls.</p>
+                    <button class="btn">Order Now</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="food-card">
+                  <img src="images/r2.jpg" alt="Gatte ki Sabzi">
+                  <div class="card-body">
+                    <h5>Gatte ki Sabzi</h5>
+                    <p>Gram flour dumplings in spicy curry.</p>
+                    <button class="btn">Order Now</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="food-card">
+                  <img src="images/r3.jpg" alt="Ker Sangri">
+                  <div class="card-body">
+                    <h5>Ker Sangri</h5>
+                    <p>Desert beans and berries in spicy gravy.</p>
+                    <button class="btn">Order Now</button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="food-card">
-            <img src="images/n2.jpg" alt="Tiffin 2">
-            <div class="card-body">
-              <h5>Tiffin 2</h5>
-              <p>A wholesome tiffin option to end your day right.</p>
-              <button class="btn">Order Now</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="food-card">
-            <img src="images/r2.jpg" alt="Tiffin 3">
-            <div class="card-body">
-              <h5>Tiffin 3</h5>
-              <p>Enjoy this tasty tiffin for a satisfying dinner experience.</p>
-              <button class="btn">Order Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Rajasthani section -->
-  <section class="state-section" id="rajasthani">
-    <div class="container">
-      <h2>Rajasthani Dinner</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="food-card">
-            <img src="images/r1.jpg" alt="Tiffin 1">
-            <div class="card-body">
-              <h5>Tiffin 1</h5>
-              <p>A delicious and nutritious tiffin meal for dinner, packed with flavors.</p>
-              <button class="btn">Order Now</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="food-card">
-            <img src="images/r2.jpg" alt="Tiffin 2">
-            <div class="card-body">
-              <h5>Tiffin 2</h5>
-              <p>A wholesome tiffin option to end your day right.</p>
-              <button class="btn">Order Now</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="food-card">
-            <img src="images/r3.jpg" alt="Tiffin 3">
-            <div class="card-body">
-              <h5>Tiffin 3</h5>
-              <p>Enjoy this tasty tiffin for a satisfying dinner experience.</p>
-              <button class="btn">Order Now</button>
-            </div>
-          </div>
+          </section>
+          
         </div>
       </div>
     </div>
@@ -398,46 +411,64 @@
             </li>
           </ul>
         </div>
-        <div class="social_box">
-          <a href="">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-          </a>
-          <a href="">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </a>
-          <a href="">
-            <i class="fa fa-linkedin" aria-hidden="true"></i>
-          </a>
-        </div>
       </div>
     </section>
     <!-- end info_section -->
 
-
     <!-- footer section -->
-    <footer class="footer_section">
+    <section class="footer_section">
       <div class="container">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br>
-          Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+          <a href="https://html.design/">Free Html Templates</a>
         </p>
       </div>
-    </footer>
+    </section>
     <!-- footer section -->
-
   </div>
+
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- bootstrap js -->
   <script src="js/bootstrap.js"></script>
-  <!-- slick  slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
   <!-- nice select -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKY1kjBO0qc=" crossorigin="anonymous"></script>
+  <!-- slick js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NX/S9zk3WnHrCTIVqdZbYw0GyNfKkEPe0j7xc3F538=" crossorigin="anonymous"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsV3UYk08c8cj8Cn_sN80&callback=initMap" async defer></script>
+  <!-- End Google Map -->
 
+  <script>
+    // Filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const sections = document.querySelectorAll('.dinner-section');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Remove active class from all filter buttons
+          filterBtns.forEach(b => b.classList.remove('active'));
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          const filterValue = this.getAttribute('data-filter');
+          
+          sections.forEach(section => {
+            if (filterValue === 'all' || section.getAttribute('data-category') === filterValue) {
+              section.style.display = 'block';
+            } else {
+              section.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
 
 </body>
 
