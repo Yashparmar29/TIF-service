@@ -51,9 +51,9 @@
           </a>
           <div class="" id="">
             <div class="User_option">
-              <a href="login.html">
+              <a href="" id="auth-link">
                 <i class="fa fa-user" aria-hidden="true"></i>
-                <span>Login</span>
+                <span id="auth-text">Login</span>
               </a>
               <form class="form-inline ">
                 <input type="search" placeholder="Search" />
@@ -429,6 +429,31 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Check if user is logged in
+      const currentUser = localStorage.getItem('tif_current_user');
+      const authLink = $('#auth-link');
+      const authText = $('#auth-text');
+      
+      if (currentUser) {
+        const user = JSON.parse(currentUser);
+        // User is logged in - show Logout
+        authText.text('Logout');
+        authLink.on('click', function(e) {
+          e.preventDefault();
+          if (confirm('Are you sure you want to logout?')) {
+            localStorage.removeItem('tif_current_user');
+            alert('You have been logged out successfully.');
+            window.location.href = 'index.html';
+          }
+        });
+      } else {
+        // User is not logged in - link to login.html
+        authLink.attr('href', 'login.html');
+      }
+    });
+  </script>
 
 
 </body>
