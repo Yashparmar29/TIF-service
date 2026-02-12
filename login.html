@@ -71,6 +71,18 @@
   <script>
     $(document).ready(function() {
       let isLogin = true; // start with login
+
+      // Function to get users from localStorage
+      function getUsers() {
+        const users = localStorage.getItem('tif_users');
+        return users ? JSON.parse(users) : [];
+      }
+
+      // Function to save users to localStorage
+      function saveUsers(users) {
+        localStorage.setItem('tif_users', JSON.stringify(users));
+      }
+
       $(document).on('click', '#switch-link', function(e) {
         e.preventDefault();
         isLogin = !isLogin;
@@ -86,9 +98,47 @@
           $('#switch-text').html('Already Have An Account? <a href="#" id="switch-link">Login Here</a>');
         }
       });
+
       $('#auth-form').submit(function(e) {
         e.preventDefault();
-        alert(isLogin ? 'Login successful!' : 'Registration successful!');
+        const email = $('#email').val().trim();
+        const password = $('#password').val();
+        const users = getUsers();
+
+        if (isLogin) {
+          // Login logic
+          const user = users.find(u => u.email === email && u.password === password);
+          if (user) {
+            alert('Login successful! Welcome back, ' + user.name);
+            // Redirect to home page
+            window.location.href = 'index.html';
+          } else {
+            alert('Invalid email or password. Please try again.');
+          }
+        } else {
+          // Registration logic
+          const name = $('#name').val().trim();
+          const mobile = $('#mobile').val().trim();
+          const address = $('#address').val().trim();
+
+          if (!name || !mobile || !address || !email || !password) {
+            alert('Please fill in all fields.');
+            return;
+          }
+
+          const existingUser = users.find(u => u.email === email);
+          if (existingUser) {
+            alert('An account with this email already exists. Please login instead.');
+            return;
+          }
+
+          // Add new user
+          users.push({ name, email, password, mobile, address });
+          saveUsers(users);
+          alert('Registration successful! You can now login.');
+          // Switch to login form
+          $('#switch-link').click();
+        }
       });
     });
   </script>
