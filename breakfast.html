@@ -176,6 +176,10 @@
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <span>Login</span>
               </a>
+              <a href="cart.html" style="position: relative; margin-left: 15px;">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span id="cart-count" style="position: absolute; top: -8px; right: -8px; background: #dc3545; color: #fff; font-size: 0.7rem; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">0</span>
+              </a>
             </div>
 
             <div class="custom_menu-btn">
@@ -193,6 +197,7 @@
                 <a class="active" href="breakfast.html">Breakfast</a>
                 <a href="lunch.html">Lunch</a>
                 <a href="dinner.html">Dinner</a>
+                <a href="cart.html">Cart</a>
               </div>
             </div>
 
@@ -234,13 +239,14 @@
           <section class="breakfast-section" data-category="gujarati">
             <h2>Gujarati Breakfast</h2>
             <div class="row">
-              <div class="col-md-4">
+                <div class="col-md-4">
                 <div class="food-card">
                   <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop" alt="Dhokla">
                   <div class="card-body">
                     <h5>Dhokla</h5>
                     <p>Soft and spongy steamed lentil cake, a Gujarati specialty.</p>
-                    <button class="btn">Order Now</button>
+                    <p style="color: #4855fe; font-weight: bold; font-size: 1.2rem;">$5.99</p>
+                    <button class="btn btn-primary" onclick="addToCart({id: 'breakfast-1', name: 'Dhokla', price: 5.99, image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop', description: 'Soft and spongy steamed lentil cake'})">Add to Cart</button>
                   </div>
                 </div>
               </div>
@@ -250,7 +256,8 @@
                   <div class="card-body">
                     <h5>Thepla</h5>
                     <p>Healthy methi flatbread, perfect for breakfast.</p>
-                    <button class="btn">Order Now</button>
+                    <p style="color: #4855fe; font-weight: bold; font-size: 1.2rem;">$4.99</p>
+                    <button class="btn btn-primary" onclick="addToCart({id: 'breakfast-2', name: 'Thepla', price: 4.99, image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop', description: 'Healthy methi flatbread'})">Add to Cart</button>
                   </div>
                 </div>
               </div>
