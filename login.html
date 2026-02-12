@@ -17,8 +17,8 @@
     .left-side::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); }
     .left-side .overlay-text { position: relative; z-index: 1; color: white; text-align: center; font-size: 3rem; font-weight: 700; }
     .left-side .sub-text { font-size: 1.5rem; margin-top: 1rem; color: #007bff; }
-    .right-side { flex: 1; background: white; display: flex; align-items: center; justify-content: center; padding: 2rem; }
-    .login-container { padding: 2rem; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+    .right-side { flex: 1; background: white; display: flex; align-items: center; justify-content: center; padding: 2rem; position: relative; z-index: 10; }
+    .login-container { padding: 2rem; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 100%; max-width: 400px; position: relative; z-index: 10; }
     .login-container h2 { text-align: center; margin-bottom: 2rem; color: #333; font-weight: 600; }
     .form-group { margin-bottom: 1.5rem; position: relative; }
     .form-group label { display: block; margin-bottom: 0.5rem; color: #555; font-weight: 500; }
@@ -26,6 +26,8 @@
     .form-group textarea { resize: vertical; min-height: 80px; padding-left: 1rem; }
     .form-group i { position: absolute; left: 0.75rem; top: 2.5rem; color: #999; }
     .submit-btn { width: 100%; padding: 0.75rem; background: #ff6b35; color: white; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; margin-bottom: 1rem; }
+    .submit-btn:hover { background: #e55a2b; }
+    .submit-btn:active { transform: scale(0.98); }
     .switch-form { text-align: center; margin-top: 1rem; font-size: 0.9rem; }
     .switch-form a { color: #ff6b35; text-decoration: none; }
     .switch-form a:hover { text-decoration: underline; }
@@ -70,12 +72,8 @@
   <script src="js/custom.js"></script>
   <script>
     $(document).ready(function() {
-      // Check if user is already logged in, redirect to index
-      const currentUser = localStorage.getItem('tif_current_user');
-      if (currentUser) {
-        window.location.href = 'index.html';
-        return;
-      }
+      // Clear any existing session so user can login with different account
+      localStorage.removeItem('tif_current_user');
       
       let isLogin = true; // start with login
 
