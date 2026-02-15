@@ -31,11 +31,16 @@ function fetchAll($table, $condition = '', $params = []) {
     $sql = "SELECT * FROM $table";
     
     if (!empty($condition)) {
+        // Convert :param to SQLite format
+        $condition = str_replace(':', '', $condition);
         $sql .= " WHERE $condition";
     }
     
     $stmt = $pdo->prepare($sql);
-    $stmt->execute($params);
+    
+    // Convert named params to positional for SQLite
+    $values = array_values($params);
+    $stmt->execute($values);
     return $stmt->fetchAll();
 }
 
@@ -48,10 +53,12 @@ function fetchAll($table, $condition = '', $params = []) {
  */
 function fetchOne($table, $condition, $params = []) {
     $pdo = getDBConnection();
+    $condition = str_replace(':', '', $condition);
     $sql = "SELECT * FROM $table WHERE $condition LIMIT 1";
     
     $stmt = $pdo->prepare($sql);
-    $stmt->execute($params);
+    $values = array_values($params);
+    $stmt->execute($values);
     return $stmt->fetch();
 }
 
@@ -64,13 +71,13 @@ function fetchOne($table, $condition, $params = []) {
 function insert($table, $data) {
     $pdo = getDBConnection();
     $columns = implode(', ', array_keys($data));
-    $placeholders = ':' . implode(', :', array_keys($data));
+    $placeholders = implode(', ', array_fill(0, count($data), '?'));
     
     $sql = "INSERT INTO $table ($columns) VALUES ($placeholders)";
     
     try {
         $stmt = $pdo->prepare($sql);
-        $stmt->execute($data);
+        $stmt->execute(array_values($data));
         return $pdo->lastInsertId();
     } catch (PDOException $e) {
         error_log("Insert Error: " . $e->getMessage());
@@ -94,9 +101,10 @@ function update($table, $data, $condition, $params = []) {
     }
     $setClause = implode(', ', $set);
     
+    $condition = str_replace(':', '', $condition);
     $sql = "UPDATE $table SET $setClause WHERE $condition";
     
-    $mergedParams = array_merge($data, $params);
+    $mergedParams = array_merge(array_values($data), array_values($params));
     
     try {
         $stmt = $pdo->prepare($sql);
@@ -116,11 +124,12 @@ function update($table, $data, $condition, $params = []) {
  */
 function delete($table, $condition, $params = []) {
     $pdo = getDBConnection();
+    $condition = str_replace(':', '', $condition);
     $sql = "DELETE FROM $table WHERE $condition";
     
     try {
         $stmt = $pdo->prepare($sql);
-        return $stmt->execute($params);
+        return $stmt->execute(array_values($params));
     } catch (PDOException $e) {
         error_log("Delete Error: " . $e->getMessage());
         return false;
@@ -138,10 +147,10 @@ function query($sql, $params = []) {
     
     try {
         $stmt = $pdo->prepare($sql);
-        $stmt->execute($params);
+        $stmt->execute(array_values($params));
         
         // Return true for INSERT/UPDATE/DELETE, data for SELECT
-        if (stripos($sql, 'SELECT') === 0) {
+        if (stripos(trim($sql), 'SELECT') === 0) {
             return $stmt->fetchAll();
         }
         return true;

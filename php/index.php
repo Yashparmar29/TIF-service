@@ -72,7 +72,7 @@ if ($selectedCategory) {
                         <div class="menu-item-content">
                             <div class="menu-item-name"><?php echo htmlspecialchars($item['name']); ?></div>
                             <div class="menu-item-description"><?php echo htmlspecialchars($item['description'] ?? ''); ?></div>
-                            <div class="menu-item-price">$<?php echo number_format($item['price'], 2); ?></div>
+                            <div class="menu-item-price">₹<?php echo number_format($item['price'], 0); ?></div>
                             <button class="add-to-cart" onclick="addToCart(<?php echo $item['id']; ?>)">Add to Cart</button>
                         </div>
                     </div>
