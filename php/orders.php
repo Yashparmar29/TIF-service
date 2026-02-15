@@ -122,3 +122,147 @@ function getOrderById($orderId) {
 
 /**
  * Get order items
+ * @param int $orderId
+ * @return array
+ */
+function getOrderItems($orderId) {
+    $pdo = getDBConnection();
+    $sql = "SELECT oi.*, mi.name, mi.description, mi.image 
+            FROM order_items oi
+            JOIN menu_items mi ON oi.menu_item_id = mi.id
+            WHERE oi.order_id = :order_id";
+    
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['order_id' => $orderId]);
+    
+    return $stmt->fetchAll();
+}
+
+/**
+ * Get all orders (admin)
+ * @param string $status
+ * @return array
+ */
+function getAllOrders($status = null) {
+    if ($status) {
+        $orders = fetchAll('orders', 'status = :status ORDER BY created_at DESC', ['status' => $status]);
+    } else {
+        $orders = fetchAll('orders', '1=1 ORDER BY created_at DESC');
+    }
+    
+    foreach ($orders as &$order) {
+        $order['items'] = getOrderItems($order['id']);
+        $order['user'] = fetchOne('users', 'id = :id', ['id' => $order['user_id']]);
+    }
+    
+    return $orders;
+}
+
+/**
+ * Update order status (admin)
+ * @param int $orderId
+ * @param string $status
+ * @return array
+ */
+function updateOrderStatus($orderId, $status) {
+    $validStatuses = ['pending', 'confirmed', 'delivered', 'cancelled'];
+    
+    if (!in_array($status, $validStatuses)) {
+        return ['success' => false, 'message' => 'Invalid status.'];
+    }
+    
+    $result = update('orders', ['status' => $status], 'id = :id', ['id' => $orderId]);
+    
+    if ($result) {
+        return ['success' => true, 'message' => 'Order status updated.'];
+    }
+    
+    return ['success' => false, 'message' => 'Failed to update order status.'];
+}
+
+/**
+ * Cancel order
+ * @param int $orderId
+ * @param int $userId
+ * @return array
+ */
+function cancelOrder($orderId, $userId) {
+    $order = fetchOne('orders', 'id = :id AND user_id = :user_id', ['id' => $orderId, 'user_id' => $userId]);
+    
+    if (!$order) {
+        return ['success' => false, 'message' => 'Order not found.'];
+    }
+    
+    if ($order['status'] !== 'pending') {
+        return ['success' => false, 'message' => 'Cannot cancel this order.'];
+    }
+    
+    return updateOrderStatus($orderId, 'cancelled');
+}
+
+// Handle API requests
+if ($_SERVER['REQUEST_METHOD'] === 'GET' || $_SERVER['REQUEST_METHOD'] === 'POST') {
+    header('Content-Type: application/json');
+    
+    $action = $_GET['action'] ?? ($_POST['action'] ?? '');
+    $response = ['success' => false, 'message' => 'Invalid action.'];
+    
+    switch ($action) {
+        case 'place_order':
+            if (!isset($_SESSION['user_id'])) {
+                $response = ['success' => false, 'message' => 'Please login first.'];
+            } else {
+                $items = json_decode($_POST['items'] ?? '[]', true);
+                $response = placeOrder($_SESSION['user_id'], $items);
+            }
+            break;
+            
+        case 'get_user_orders':
+            if (!isset($_SESSION['user_id'])) {
+                $response = ['success' => false, 'message' => 'Please login first.'];
+            } else {
+                $orders = getUserOrders($_SESSION['user_id']);
+                $response = [
+                    'success' => true,
+                    'orders' => $orders
+                ];
+            }
+            break;
+            
+        case 'get_order':
+            $orderId = $_GET['order_id'] ?? 0;
+            $order = getOrderById($orderId);
+            $response = [
+                'success' => $order ? true : false,
+                'order' => $order
+            ];
+            break;
+            
+        case 'get_all_orders':
+            $status = $_GET['status'] ?? null;
+            $orders = getAllOrders($status);
+            $response = [
+                'success' => true,
+                'orders' => $orders
+            ];
+            break;
+            
+        case 'update_order_status':
+            $orderId = $_POST['order_id'] ?? 0;
+            $status = $_POST['status'] ?? '';
+            $response = updateOrderStatus($orderId, $status);
+            break;
+            
+        case 'cancel_order':
+            if (!isset($_SESSION['user_id'])) {
+                $response = ['success' => false, 'message' => 'Please login first.'];
+            } else {
+                $orderId = $_POST['order_id'] ?? 0;
+                $response = cancelOrder($orderId, $_SESSION['user_id']);
+            }
+            break;
+    }
+    
+    echo json_encode($response);
+    exit;
+}
