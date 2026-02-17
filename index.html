@@ -254,143 +254,58 @@
         </h2>
       </div>
       
-      <!-- Category Filter Buttons -->
+      <!-- Category Filter Buttons - Links to category pages -->
       <div class="categories text-center mb-4">
-        <button class="category-btn active" data-category="all">All</button>
-        <button class="category-btn" data-category="breakfast">Breakfast</button>
-        <button class="category-btn" data-category="lunch">Lunch</button>
-        <button class="category-btn" data-category="dinner">Dinner</button>
+        <a href="breakfast.html" class="category-btn">Breakfast</a>
+        <a href="lunch.html" class="category-btn">Lunch</a>
+        <a href="dinner.html" class="category-btn">Dinner</a>
       </div>
       
-      <!-- Menu Grid -->
-      <div class="row menu-grid">
-        <!-- Breakfast Items -->
-        <div class="col-sm-6 col-md-4 menu-item" data-category="breakfast">
+      <!-- Menu Grid with featured items from each category -->
+      <div class="row">
+        <!-- Breakfast Featured Items -->
+        <div class="col-sm-6 col-md-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/r1.jpg" class="box-img" alt="Classic Pancakes">
+              <img src="images/r1.jpg" class="box-img" alt="">
             </div>
             <div class="detail-box">
-              <h4>Classic Pancakes</h4>
-              <p>Fluffy pancakes with maple syrup</p>
-              <h5 class="price">₹150</h5>
-              <button class="btn btn-danger add-to-cart" onclick="addToCart(1, 'Classic Pancakes', 150)">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 menu-item" data-category="breakfast">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/r2.jpg" class="box-img" alt="Eggs Benedict">
-            </div>
-            <div class="detail-box">
-              <h4>Eggs Benedict</h4>
-              <p>Poached eggs with hollandaise sauce</p>
-              <h5 class="price">₹225</h5>
-              <button class="btn btn-danger add-to-cart" onclick="addToCart(2, 'Eggs Benedict', 225)">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 menu-item" data-category="breakfast">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/r3.jpg" class="box-img" alt="Breakfast Platter">
-            </div>
-            <div class="detail-box">
-              <h4>Breakfast Platter</h4>
-              <p>Assorted breakfast items</p>
-              <h5 class="price">₹325</h5>
-              <button class="btn btn-danger add-to-cart" onclick="addToCart(3, 'Breakfast Platter', 325)">Add to Cart</button>
+              <h4>Breakfast</h4>
+              <p>Start your day with delicious breakfast options</p>
+              <a href="breakfast.html" class="btn btn-danger">View Menu</a>
             </div>
           </div>
         </div>
         
-        <!-- Lunch Items -->
-        <div class="col-sm-6 col-md-4 menu-item" data-category="lunch">
+        <!-- Lunch Featured Items -->
+        <div class="col-sm-6 col-md-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/r2.jpg" class="box-img" alt="Grilled Chicken Salad">
+              <img src="images/r2.jpg" class="box-img" alt="">
             </div>
             <div class="detail-box">
-              <h4>Grilled Chicken Salad</h4>
-              <p>Fresh salad with grilled chicken</p>
-              <h5 class="price">₹250</h5>
-              <button class="btn btn-danger add-to-cart" onclick="addToCart(4, 'Grilled Chicken Salad', 250)">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 menu-item" data-category="lunch">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/r1.jpg" class="box-img" alt="Club Sandwich">
-            </div>
-            <div class="detail-box">
-              <h4>Club Sandwich</h4>
-              <p>Triple-decker sandwich with fries</p>
-              <h5 class="price">₹225</h5>
-              <button class="btn btn-danger add-to-cart" onclick="addToCart(5, 'Club Sandwich', 225)">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 menu-item" data-category="lunch">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/r3.jpg" class="box-img" alt="Pasta Primavera">
-            </div>
-            <div class="detail-box">
-              <h4>Pasta Primavera</h4>
-              <p>Fresh vegetables with pasta</p>
-              <h5 class="price">₹275</h5>
-              <button class="btn btn-danger add-to-cart" onclick="addToCart(6, 'Pasta Primavera', 275)">Add to Cart</button>
+              <h4>Lunch</h4>
+              <p>Midday meals for energy and satisfaction</p>
+              <a href="lunch.html" class="btn btn-danger">View Menu</a>
             </div>
           </div>
         </div>
         
-        <!-- Dinner Items -->
-        <div class="col-sm-6 col-md-4 menu-item" data-category="dinner">
+        <!-- Dinner Featured Items -->
+        <div class="col-sm-6 col-md-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/r3.jpg" class="box-img" alt="Steak Dinner">
+              <img src="images/r3.jpg" class="box-img" alt="">
             </div>
             <div class="detail-box">
-              <h4>Steak Dinner</h4>
-              <p>Grilled steak with vegetables</p>
-              <h5 class="price">₹475</h5>
-              <button class="btn btn-danger add-to-cart" onclick="addToCart(7, 'Steak Dinner', 475)">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 menu-item" data-category="dinner">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/r1.jpg" class="box-img" alt="Fish and Chips">
-            </div>
-            <div class="detail-box">
-              <h4>Fish and Chips</h4>
-              <p>Crispy fish with fries</p>
-              <h5 class="price">₹375</h5>
-              <button class="btn btn-danger add-to-cart" onclick="addToCart(8, 'Fish and Chips', 375)">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 menu-item" data-category="dinner">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/r2.jpg" class="box-img" alt="Vegetable Curry">
-            </div>
-            <div class="detail-box">
-              <h4>Vegetable Curry</h4>
-              <p>Authentic vegetable curry with rice</p>
-              <h5 class="price">₹325</h5>
-              <button class="btn btn-danger add-to-cart" onclick="addToCart(9, 'Vegetable Curry', 325)">Add to Cart</button>
+              <h4>Dinner</h4>
+              <p>Evening dining experience</p>
+              <a href="dinner.html" class="btn btn-danger">View Menu</a>
             </div>
           </div>
         </div>
       </div>
       
-      <div class="btn-box mt-4">
-        <a href="cart.html" class="">View Cart</a>
-      </div>
     </div>
   </section>
 
@@ -610,31 +525,9 @@
         // User is not logged in - link to login.html
         authLink.attr('href', 'login.html');
       }
-      
-      // Category filter functionality
-      $('.category-btn').on('click', function() {
-        const category = $(this).data('category');
-        
-        // Update active button
-        $('.category-btn').removeClass('active');
-        $(this).addClass('active');
-        
-        // Filter menu items
-        if (category === 'all') {
-          $('.menu-item').fadeIn(300);
-        } else {
-          $('.menu-item').each(function() {
-            if ($(this).data('category') === category) {
-              $(this).fadeIn(300);
-            } else {
-              $(this).fadeOut(300);
-            }
-          });
-        }
-      });
     });
     
-    // Add to cart function
+    // Add to cart function - for items on category pages
     function addToCart(id, name, price) {
       // Get existing cart from localStorage
       let cart = JSON.parse(localStorage.getItem('tif_cart') || '[]');
