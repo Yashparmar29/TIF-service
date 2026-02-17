@@ -531,93 +531,76 @@ a:focus {
   margin-bottom: 30px;
 }
 
-.categories {
+.menu_section .categories {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
-.category-btn {
-  padding: 12px 25px;
-  background: #ffffff;
-  color: #333;
-  border: 2px solid #ff6347;
+.menu_section .category-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #ff6347;
+  color: #ffffff;
   border-radius: 30px;
-  cursor: pointer;
+  text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
-.category-btn:hover,
-.category-btn.active {
-  background: #ff6347;
-  color: #ffffff;
+.menu_section .category-btn:hover {
+  background: #e5533d;
+  transform: translateY(-2px);
 }
 
-.menu-grid .menu-item {
-  display: block;
-}
-
-.menu-item .box {
+.menu_section .box {
   background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
   height: 100%;
+  margin-bottom: 20px;
 }
 
-.menu-item .box:hover {
+.menu_section .box:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
-.menu-item .img-box {
+.menu_section .img-box {
   height: 200px;
   overflow: hidden;
 }
 
-.menu-item .img-box img {
+.menu_section .img-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
-.menu-item .box:hover .img-box img {
-  transform: scale(1.1);
-}
-
-.menu-item .detail-box {
-  padding: 20px;
+.menu_section .detail-box {
+  padding: 25px;
   text-align: center;
 }
 
-.menu-item .detail-box h4 {
-  font-size: 1.3rem;
+.menu_section .detail-box h4 {
+  font-size: 1.5rem;
   font-weight: 700;
   color: #333;
   margin-bottom: 10px;
 }
 
-.menu-item .detail-box p {
+.menu_section .detail-box p {
   color: #666;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
 }
 
-.menu-item .price {
-  font-size: 1.4rem;
-  color: #ff6347;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.menu-item .add-to-cart {
-  width: 100%;
-  padding: 12px;
+.menu_section .btn {
+  padding: 10px 30px;
   font-weight: 600;
 }
 
