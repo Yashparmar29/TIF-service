@@ -117,7 +117,32 @@ INSERT INTO menu_items (category_id, name, description, price, image) VALUES
 (3, 'Roti', 'Whole wheat flatbread', 2.99, 'https://images.unsplash.com/photo-1603048297172-c92544798d5e?w=400&h=300&fit=crop'),
 (3, 'Dal Baati Churma', 'Lentils with baked wheat balls', 7.99, 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400&h=300&fit=crop'),
 (3, 'Gatte ki Sabzi', 'Gram flour dumplings in curry', 6.49, 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&h=300&fit=crop'),
-(3, 'Ker Sangri', 'Desert beans and berries curry', 7.49, 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop');
+(3, 'Ker Sangri', 'Desert beans and berries curry', 7.49, 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop'),
+
+-- Desserts Category (category_id = 4)
+(4, 'Mohanthal', 'Rich besan-based sweet', 4.99, 'images/r1.jpg'),
+(4, 'Gulab Jamun', 'Deep fried milk solids in syrup', 3.99, 'images/r2.jpg'),
+(4, 'Badusha', 'Balushahi sweet pastry', 4.49, 'images/r3.jpg'),
+(4, 'Rasgulla', 'Spongy cottage cheese balls', 3.99, 'images/n1.jpg'),
+(4, 'Kaju Katli', 'Cashew fudge dessert', 5.99, 'images/n2.jpg'),
+(4, 'Motichur Ladoo', 'Boondi laddu with ghee', 4.49, 'images/r1.jpg'),
+(4, 'Mysore Pak', 'Besan and ghee sweet', 4.99, 'images/r2.jpg'),
+(4, 'Payasam Mix', 'Rice pudding mix', 3.99, 'images/r3.jpg'),
+(4, 'Halwa', 'Semolina sweet pudding', 3.49, 'images/n1.jpg'),
+
+-- Snacks Category (category_id = 5)
+(5, 'Pav Bhaji', 'Spiced vegetable mash with bread', 5.49, 'images/r1.jpg'),
+(5, 'Dahi Puri', 'Crispy puris with yogurt and chutneys', 4.99, 'images/r2.jpg'),
+(5, 'Bhel Puri', 'Puffed rice with vegetables', 4.49, 'images/r3.jpg'),
+(5, 'Medu Vada', 'Fried lentil donuts', 4.99, 'images/n1.jpg'),
+(5, 'Masala Dosa', 'Crispy rice crepe with potato filling', 6.99, 'images/n2.jpg'),
+(5, 'Idli Sambar', 'Steamed rice cakes with lentil stew', 5.49, 'images/r1.jpg'),
+(5, 'Samosa', 'Triangular fried pastry with filling', 3.99, 'images/r2.jpg'),
+(5, 'Kachori', 'Fried pastry with spiced filling', 4.49, 'images/r3.jpg'),
+(5, 'Aloo Tikki', 'Crispy potato patty', 4.99, 'images/n1.jpg'),
+(5, 'Dhokla', 'Steamed fermented snack', 4.99, 'images/n2.jpg'),
+(5, 'Thepla', 'Gujarati flatbread with fenugreek', 3.99, 'images/r1.jpg'),
+(5, 'Khandvi', 'Rolled gram flour snack', 4.49, 'images/r3.jpg');
 
 -- Insert Sample Site Settings
 INSERT INTO site_settings (site_name, site_description, contact_email, contact_phone, address) VALUES
