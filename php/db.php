@@ -1,12 +1,5 @@
 <?php
-/**
- * TIF Service Database Connection & Helper Functions
- * Include this file in any PHP file that needs database access
- * 
- * Usage:
- *   include 'php/db.php';
- *   $pdo = getDBConnection();
- */
+
 
 // Include configuration
 require_once __DIR__ . '/config.php';
