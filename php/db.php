@@ -4,10 +4,7 @@
 // Include configuration
 require_once __DIR__ . '/config.php';
 
-/**
- * Initialize database connection
- * @return PDO
- */
+
 function initDB() {
     return getDBConnection();
 }
