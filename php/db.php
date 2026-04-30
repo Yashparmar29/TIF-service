@@ -9,13 +9,7 @@ function initDB() {
     return getDBConnection();
 }
 
-/**
- * Fetch all rows from a table
- * @param string $table
- * @param string $condition
- * @param array $params
- * @return array
- */
+
 function fetchAll($table, $condition = '', $params = []) {
     $pdo = getDBConnection();
     $sql = "SELECT * FROM $table";
