@@ -28,13 +28,7 @@ function fetchAll($table, $condition = '', $params = []) {
     return $stmt->fetchAll();
 }
 
-/**
- * Fetch single row from a table
- * @param string $table
- * @param string $condition
- * @param array $params
- * @return array|null
- */
+
 function fetchOne($table, $condition, $params = []) {
     $pdo = getDBConnection();
     $condition = str_replace(':', '', $condition);
